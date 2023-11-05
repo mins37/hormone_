@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Gugi&family=Rye&display=swap');
+
+@font-face {
+    font-family: 'Gugi', sans-serif;
+    src: url();
+}
+
+
+/*main page*/
+
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+    user-select: none;
+
+}
+
+body {
+    font-size: 2rem;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-image: url(img/sub_page.png); 
+    background-attachment: flex;
+}
+
+
+.slider {
+    position: absolute;
+    left: -200px;
+    transform: translateX(-50%) translateY(0);
+    width:290px;
+    height:440px;
+    transform-style: preserve-3d;
+    animation: rotate 50s linear infinite;
+    animation-name: myAni;
+    animation-duration: initial;
+    animation-iteration-count: initial;
+    animation-timing-function: ease-in-out;
+}
+
+.slider span{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateZ(calc(var(--i)*20deg)) translateY(380px);
+}
+
+.slider span img{
+    position: absolute;
+    top: 0;
+    left:0;
+    width:100%;
+    height:100%;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: 3s;
+    transform: rotateY(0deg);
+    transition: transform 0.3s ease;
+}
+
+
+.slider.paused span img {
+    animation-play-state: paused;
+}
+
+.maintitle {
+    font-size: 3rem;
+    font-weight: 500;
+    text-align: center;
+    position: absolute;
+    background-color: none;
+}
+
+/*시작버튼*/
+
+#startButton {
+    margin: 0px;
+    text-align: center;
+    font-family: 'Gugi', sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    background: none;
+    color: #8effe8;
+    border: none;
+    cursor: pointer; /* 커서를 손가락으로 변경하여 버튼을 클릭 가능하게 함 */
+}
+
+
+#startButton:hover {
+    margin: 0px;
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Gugi', sans-serif;
+    font-weight: 900;
+    background: none;
+    color: white;
+    border: none;
+}
+
+
+
+
+.close-popup {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+/* 팝업 닫기 버튼 스타일 */
+#popupCloseButton {
+    position: absolute;
+    top: 50px; /* 이미지 위로 올리려면 원하는 위치로 조정 (팝업 내부 이미지와의 간격) */
+    right: 65px; /* 원하는 위치로 조정 (팝업 내부 이미지와의 간격) */
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    opacity: 0.7;
+}
+
+
+.footer {
+    font-size: 0.7rem;
+    color: #8effe8;
+    position: fixed; /* fixed로 변경하여 화면에 고정 */
+    text-align: right;
+    right: 30px;
+    bottom: 0; /* 아래에 고정 */
+    padding: 30px; /* 필요에 따라 여백 설정 */
+}

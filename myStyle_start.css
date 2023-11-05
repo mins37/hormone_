@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Gugi&family=Rye&display=swap');
+
+@font-face {
+    font-family: 'Gugi', sans-serif;
+    src: url();
+}
+
+/*main page*/
+
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+    user-select: none;
+
+}
+
+body {
+    font-size: 2rem;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-image: url(img/sub_page.png);  background-attachment: flex;
+}
+
+
+.slider {
+    position: relative;
+    width:290px;
+    height:440px;
+    transform-style: preserve-3d;
+    animation: rotate 50s linear infinite;
+    user-select: none;
+    animation-name: myAni;
+    animation-duration: initial;
+    animation-iteration-count: initial;
+    animation-timing-function: ease-in-out;
+}
+
+.slider span{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateZ(calc(var(--i)*20deg)) translateY(380px);
+    user-select: none;
+}
+
+.slider span img{
+    position: absolute;
+    top: 0;
+    left:0;
+    width:100%;
+    height:100%;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: 3s;
+    transform: rotateY(0deg);
+    user-select: none;
+}
+
+
+
+.maintitle {
+    font-size: 3rem;
+    font-weight: 500;
+    text-align: center;
+    position: absolute;
+    background-color: none;
+    color: #8effe8;
+    font-family: 'Gugi', sans-serif;
+    background: none;
+    cursor: pointer; /* 커서를 손가락으로 변경하여 버튼을 클릭 가능하게 함 */
+    z-index: 1; /* 버튼을 다른 요소 위로 올림 */
+    text-decoration-line: none;
+
+}
+
+/* 이미지 슬라이더 왼쪽 이동 애니메이션 */
+@keyframes slideLeft {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: translateX(-330%) rotateZ(0deg);
+    }
+}
+
+@keyframes rotateInPlace {
+    0% {
+        transform: translateX(-330%) rotateZ(0deg);
+    }
+    100% {
+        transform: translateX(-330%) rotateZ(360deg);
+    }
+}
+
+
+@keyframes buttonSlideLeft {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-450%);
+        opacity: 0;
+    }
+}
+
+.buttonFadeOut {
+    animation: buttonSlideLeft 0.5s forwards;
+}
+
+
+.footer {
+    font-size: 0.7rem;
+    color: #8effe8;
+    position: fixed; /* fixed로 변경하여 화면에 고정 */
+    text-align: right;
+    right: 30px;
+    bottom: 0; /* 아래에 고정 */
+    padding: 30px; /* 필요에 따라 여백 설정 */
+}
